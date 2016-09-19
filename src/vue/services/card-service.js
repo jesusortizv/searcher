@@ -15,7 +15,7 @@ import jsonCards from './cards.json';
 export function getCards(cardId, local) {
   return !local ? Vue.http.get(`https://www.spotahome.com/api/public/listings/search/homecards/${cardId}`, {
     headers: {
-      // 'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': '*',
     },
   }) : new Promise((resolve) => resolve(jsonCards));
 }

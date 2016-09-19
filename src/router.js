@@ -29,7 +29,7 @@ router.beforeEach((transition) => {
       transition.redirect({ name: 'home' });
     }
 
-    cardService.getCards(homeCardId, true)
+    cardService.getCards(homeCardId, false)
       .then((resp) => {
         const cards = resp.data;
         actionEmitter.emit('CARD-ACTION', { cards, action: 'update-cards' });
