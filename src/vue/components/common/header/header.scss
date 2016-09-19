@@ -1,0 +1,26 @@
+.Header {
+  background-color: $primary-gray;
+  padding: 2rem;
+  nav {
+    padding: 1.5rem;
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        color: $secondary-green;
+        margin-right: 0.5rem;
+        &:not(:last-child) {
+          &:after {
+            content: '-';
+            font-size: 1.5rem;
+          }
+        }
+        a {
+          color: $secondary-green;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}

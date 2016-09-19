@@ -1,0 +1,14 @@
+.button {
+  border-bottom-width: 0.4rem;
+  font-family: 'Luckiest Guy', cursive;
+  color: $primary-white;
+  font-size: 1.4rem;
+  &--primary {
+    background-color: $secondary-green;
+    border-color: darken($secondary-green, 15%);
+  }
+  &--secondary {
+    background-color: $primary-orange;
+    border-color: darken($primary-orange, 15%);
+  }
+}

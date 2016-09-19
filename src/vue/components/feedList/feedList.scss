@@ -1,0 +1,29 @@
+.Feed {
+  padding: 0 2rem;
+  &__filters {
+    &__title {
+      margin-top: 0;
+    }
+  }
+  &__list {
+    list-style: none;
+    max-height: 50rem;
+    overflow-y: scroll;
+    &__item {
+      background-color: $secondary-gray;
+      margin-bottom: 2rem;
+      padding: 2.2rem;
+      &__picture {
+        width: 100%;
+        box-shadow: 0 1.3rem 1.4rem -1.1rem rgba(0,0,0,0.69);
+      }
+      &__price {
+        display: inline-block;
+        background-color: $tertiary-gray;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        border: 2px solid $primary-gray;
+      }
+    }
+  }
+}
