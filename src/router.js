@@ -6,9 +6,15 @@ import actionEmitter from './assets/js/emitter.js';
 
 const router = new VueRouter({
   saveScrollPosition: false,
+  history: true,
 });
 
 router.map({
+  '/:homeCard': {
+    name: 'homeCard',
+    description: 'Home Cards',
+    component: feed,
+  },
   '/home': {
     name: 'home',
     description: 'Home',
@@ -26,12 +32,12 @@ router.beforeEach((transition) => {
     const homeCardId = transition.to.params.homeCard;
 
     if (!homeCardId) {
-      transition.redirect({ name: 'home' });
+      transition.redirect({ name: 'homeCard' });
     }
 
-    cardService.getCards(homeCardId, false)
+    cardService.getCards(homeCardId)
       .then((resp) => {
-        const cards = resp.data;
+        const cards = resp.body.data;
         actionEmitter.emit('CARD-ACTION', { cards, action: 'update-cards' });
         transition.next();
       });
